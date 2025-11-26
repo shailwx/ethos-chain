@@ -1,5 +1,5 @@
 def main():
-    print("Hello from ethos-chain!")
+    print("Hello from Sentinel!")
 
 
 if __name__ == "__main__":

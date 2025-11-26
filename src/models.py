@@ -1,5 +1,5 @@
 """
-Data models for EthosChain audit system.
+Data models for Sentinel audit system.
 
 This module defines Pydantic models for type-safe data structures
 used throughout the application.

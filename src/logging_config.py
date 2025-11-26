@@ -1,5 +1,5 @@
 """
-Logging configuration for EthosChain.
+Logging configuration for Sentinel.
 
 Provides structured logging using structlog for consistent log output.
 """

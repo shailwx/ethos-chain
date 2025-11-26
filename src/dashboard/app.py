@@ -1,5 +1,5 @@
 """
-Streamlit Dashboard for EthosChain Supplier Auditing.
+Streamlit Dashboard for Sentinel Supplier Auditing.
 
 Reference: PRD_Version2.md - Functional Requirements FR-01 to FR-04
 """
@@ -145,12 +145,12 @@ def display_recommendations(recommendations: list):
 def main():
     """Main Streamlit application."""
     st.set_page_config(
-        page_title="EthosChain - Supplier Ethics Auditor",
+        page_title="Sentinel - Supplier Ethics Auditor",
         page_icon="🌍",
         layout="wide"
     )
     
-    st.title("🌍 EthosChain: AI Supply Chain Ethics Watchdog")
+    st.title("🌍 Sentinel: AI Supply Chain Ethics Watchdog")
     st.markdown("*Automated supplier vetting powered by AWS Bedrock Agents*")
     
     # Sidebar

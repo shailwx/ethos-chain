@@ -1,5 +1,5 @@
 """
-Agent modules for EthosChain multi-agent system.
+Agent modules for Sentinel multi-agent system.
 
 Agents:
 - Supervisor: Orchestrates the audit workflow

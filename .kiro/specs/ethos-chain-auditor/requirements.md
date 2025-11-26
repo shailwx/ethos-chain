@@ -2,11 +2,11 @@
 
 ## Introduction
 
-EthosChain is an AI-powered supply chain auditor that automates the vetting of suppliers against corporate ethical standards. The system uses a multi-agent architecture with AWS Bedrock to analyze supplier information from external sources and evaluate it against internal compliance policies. The system provides procurement teams with automated risk assessments, reducing manual vetting time while improving accuracy in identifying labor rights violations, environmental issues, and ethical concerns.
+Sentinel is an AI-powered supply chain auditor that automates the vetting of suppliers against corporate ethical standards. The system uses a multi-agent architecture with AWS Bedrock to analyze supplier information from external sources and evaluate it against internal compliance policies. The system provides procurement teams with automated risk assessments, reducing manual vetting time while improving accuracy in identifying labor rights violations, environmental issues, and ethical concerns.
 
 ## Glossary
 
-- **EthosChain System**: The complete AI-powered supply chain auditing application
+- **Sentinel System**: The complete AI-powered supply chain auditing application
 - **Supervisor Agent**: The orchestrator agent that coordinates the audit workflow and formats final reports
 - **Investigator Agent**: The worker agent responsible for gathering external intelligence about suppliers
 - **Auditor Agent**: The worker agent responsible for evaluating findings against internal compliance policies
@@ -24,11 +24,11 @@ EthosChain is an AI-powered supply chain auditor that automates the vetting of s
 
 #### Acceptance Criteria
 
-1. WHEN a user submits a supplier name through the interface, THEN the EthosChain System SHALL initiate an audit workflow
-2. WHEN the audit workflow completes, THEN the EthosChain System SHALL return results within 30 seconds
-3. WHEN the audit completes, THEN the EthosChain System SHALL display a risk score categorized as Red, Yellow, or Green
-4. WHEN audit results are displayed, THEN the EthosChain System SHALL present findings in a structured format with sources and dates
-5. WHEN the system encounters an error during audit, THEN the EthosChain System SHALL notify the user with a clear error message
+1. WHEN a user submits a supplier name through the interface, THEN the Sentinel System SHALL initiate an audit workflow
+2. WHEN the audit workflow completes, THEN the Sentinel System SHALL return results within 30 seconds
+3. WHEN the audit completes, THEN the Sentinel System SHALL display a risk score categorized as Red, Yellow, or Green
+4. WHEN audit results are displayed, THEN the Sentinel System SHALL present findings in a structured format with sources and dates
+5. WHEN the system encounters an error during audit, THEN the Sentinel System SHALL notify the user with a clear error message
 
 ### Requirement 2
 
@@ -36,11 +36,11 @@ EthosChain is an AI-powered supply chain auditor that automates the vetting of s
 
 #### Acceptance Criteria
 
-1. WHEN a violation is identified, THEN the EthosChain System SHALL display the source publication name
-2. WHEN a violation is identified, THEN the EthosChain System SHALL display the date of the reported incident
-3. WHEN a violation is identified, THEN the EthosChain System SHALL display a text snippet describing the incident
-4. WHEN multiple findings exist for a supplier, THEN the EthosChain System SHALL list all findings with their respective evidence
-5. WHEN a finding is classified as an allegation versus proven violation, THEN the EthosChain System SHALL distinguish between the two classifications
+1. WHEN a violation is identified, THEN the Sentinel System SHALL display the source publication name
+2. WHEN a violation is identified, THEN the Sentinel System SHALL display the date of the reported incident
+3. WHEN a violation is identified, THEN the Sentinel System SHALL display a text snippet describing the incident
+4. WHEN multiple findings exist for a supplier, THEN the Sentinel System SHALL list all findings with their respective evidence
+5. WHEN a finding is classified as an allegation versus proven violation, THEN the Sentinel System SHALL distinguish between the two classifications
 
 ### Requirement 3
 
@@ -48,10 +48,10 @@ EthosChain is an AI-powered supply chain auditor that automates the vetting of s
 
 #### Acceptance Criteria
 
-1. WHEN audit results are displayed, THEN the EthosChain System SHALL categorize findings into Labor, Environment, and Ethics categories
-2. WHEN displaying categorized findings, THEN the EthosChain System SHALL show the count of violations per category
-3. WHEN displaying categorized findings, THEN the EthosChain System SHALL provide a visual representation of risk distribution across categories
-4. WHERE a category has no violations, THEN the EthosChain System SHALL indicate zero violations for that category
+1. WHEN audit results are displayed, THEN the Sentinel System SHALL categorize findings into Labor, Environment, and Ethics categories
+2. WHEN displaying categorized findings, THEN the Sentinel System SHALL show the count of violations per category
+3. WHEN displaying categorized findings, THEN the Sentinel System SHALL provide a visual representation of risk distribution across categories
+4. WHERE a category has no violations, THEN the Sentinel System SHALL indicate zero violations for that category
 
 ### Requirement 4
 
@@ -95,7 +95,7 @@ EthosChain is an AI-powered supply chain auditor that automates the vetting of s
 
 #### Acceptance Criteria
 
-1. WHEN the system initializes, THEN the EthosChain System SHALL load the Supplier Code of Conduct into the Knowledge Base
+1. WHEN the system initializes, THEN the Sentinel System SHALL load the Supplier Code of Conduct into the Knowledge Base
 2. WHEN the Auditor Agent queries policies, THEN the Knowledge Base SHALL return relevant policy sections
 3. WHEN policy documents are updated, THEN the Knowledge Base SHALL reflect the updated policies for subsequent audits
 4. WHEN the Knowledge Base is queried, THEN the Knowledge Base SHALL return results within 5 seconds
@@ -109,8 +109,8 @@ EthosChain is an AI-powered supply chain auditor that automates the vetting of s
 1. WHEN the Investigator Agent returns findings, THEN the Investigator Agent SHALL format the response as valid JSON conforming to the defined schema
 2. WHEN the Auditor Agent returns assessments, THEN the Auditor Agent SHALL format the response as valid JSON conforming to the defined schema
 3. WHEN the Supervisor Agent produces the final report, THEN the Supervisor Agent SHALL format the response as valid JSON conforming to the defined schema
-4. WHEN JSON is generated, THEN the EthosChain System SHALL validate the JSON against the schema before transmission
-5. IF JSON validation fails, THEN the EthosChain System SHALL log the error and attempt to correct the format
+4. WHEN JSON is generated, THEN the Sentinel System SHALL validate the JSON against the schema before transmission
+5. IF JSON validation fails, THEN the Sentinel System SHALL log the error and attempt to correct the format
 
 ### Requirement 9
 
@@ -118,10 +118,10 @@ EthosChain is an AI-powered supply chain auditor that automates the vetting of s
 
 #### Acceptance Criteria
 
-1. WHEN processing supplier data, THEN the EthosChain System SHALL not persist proprietary information to the AI model training data
-2. WHEN querying external sources, THEN the EthosChain System SHALL only use publicly available information
-3. WHEN storing audit results, THEN the EthosChain System SHALL encrypt sensitive supplier information
-4. WHEN transmitting data between agents, THEN the EthosChain System SHALL use secure communication channels
+1. WHEN processing supplier data, THEN the Sentinel System SHALL not persist proprietary information to the AI model training data
+2. WHEN querying external sources, THEN the Sentinel System SHALL only use publicly available information
+3. WHEN storing audit results, THEN the Sentinel System SHALL encrypt sensitive supplier information
+4. WHEN transmitting data between agents, THEN the Sentinel System SHALL use secure communication channels
 
 ### Requirement 10
 
@@ -129,8 +129,8 @@ EthosChain is an AI-powered supply chain auditor that automates the vetting of s
 
 #### Acceptance Criteria
 
-1. WHEN no findings are discovered for a supplier, THEN the EthosChain System SHALL return a Green risk score with an explanation
-2. WHEN external sources are unavailable, THEN the EthosChain System SHALL notify the user and suggest retry options
-3. WHEN a supplier name is ambiguous, THEN the EthosChain System SHALL request clarification from the user
-4. WHEN the Knowledge Base query fails, THEN the EthosChain System SHALL log the error and return findings without policy evaluation
-5. IF the audit exceeds the 30-second timeout, THEN the EthosChain System SHALL return partial results with a timeout notification
+1. WHEN no findings are discovered for a supplier, THEN the Sentinel System SHALL return a Green risk score with an explanation
+2. WHEN external sources are unavailable, THEN the Sentinel System SHALL notify the user and suggest retry options
+3. WHEN a supplier name is ambiguous, THEN the Sentinel System SHALL request clarification from the user
+4. WHEN the Knowledge Base query fails, THEN the Sentinel System SHALL log the error and return findings without policy evaluation
+5. IF the audit exceeds the 30-second timeout, THEN the Sentinel System SHALL return partial results with a timeout notification

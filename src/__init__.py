@@ -1,5 +1,5 @@
 """
-EthosChain - AI Supply Chain Ethics Watchdog
+Sentinel - AI Supply Chain Ethics Watchdog
 
 A multi-agent system for automated supplier ethical compliance monitoring.
 """

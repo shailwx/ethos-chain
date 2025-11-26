@@ -1,21 +1,21 @@
 """
-Custom exceptions for EthosChain.
+Custom exceptions for Sentinel.
 
 This module defines domain-specific exceptions for better error handling.
 """
 
 
-class EthosChainError(Exception):
-    """Base exception for all EthosChain errors."""
+class SentinelError(Exception):
+    """Base exception for all Sentinel errors."""
     pass
 
 
-class ConfigurationError(EthosChainError):
+class ConfigurationError(SentinelError):
     """Raised when there's a configuration issue."""
     pass
 
 
-class AWSServiceError(EthosChainError):
+class AWSServiceError(SentinelError):
     """Raised when AWS service calls fail."""
     pass
 
@@ -30,21 +30,21 @@ class KnowledgeBaseError(AWSServiceError):
     pass
 
 
-class InvestigationError(EthosChainError):
+class InvestigationError(SentinelError):
     """Raised when investigation phase fails."""
     pass
 
 
-class AuditError(EthosChainError):
+class AuditError(SentinelError):
     """Raised when audit phase fails."""
     pass
 
 
-class ValidationError(EthosChainError):
+class ValidationError(SentinelError):
     """Raised when data validation fails."""
     pass
 
 
-class TimeoutError(EthosChainError):
+class TimeoutError(SentinelError):
     """Raised when an operation times out."""
     pass

@@ -1,4 +1,4 @@
-"""Utility modules for EthosChain."""
+"""Utility modules for Sentinel."""
 
 from src.utils.aws_clients import (
     get_bedrock_agent_client,

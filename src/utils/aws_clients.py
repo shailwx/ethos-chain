@@ -1,5 +1,5 @@
 """
-AWS client utilities for EthosChain.
+AWS client utilities for Sentinel.
 
 Provides factory functions for creating AWS service clients with
 proper configuration and error handling.

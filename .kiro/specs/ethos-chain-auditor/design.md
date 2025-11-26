@@ -2,7 +2,7 @@
 
 ## Overview
 
-EthosChain is a multi-agent AI system built on AWS Bedrock that automates supplier ethical compliance auditing. The system employs a hierarchical agent architecture where a Supervisor Agent orchestrates two specialized worker agents: an Investigator Agent that gathers external intelligence, and an Auditor Agent that evaluates findings against internal policies using Retrieval-Augmented Generation (RAG).
+Sentinel is a multi-agent AI system built on AWS Bedrock that automates supplier ethical compliance auditing. The system employs a hierarchical agent architecture where a Supervisor Agent orchestrates two specialized worker agents: an Investigator Agent that gathers external intelligence, and an Auditor Agent that evaluates findings against internal policies using Retrieval-Augmented Generation (RAG).
 
 The system processes supplier names through a Streamlit web interface, executes parallel intelligence gathering and policy evaluation, and returns structured risk assessments with evidence-based findings in under 30 seconds. All inter-agent communication uses validated JSON schemas to ensure data integrity and reliable parsing.
 

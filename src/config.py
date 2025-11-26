@@ -1,5 +1,5 @@
 """
-Configuration management for EthosChain.
+Configuration management for Sentinel.
 
 This module handles all configuration settings using pydantic-settings
 for type-safe configuration with validation.
@@ -72,7 +72,7 @@ class AppSettings(BaseSettings):
         extra="ignore"
     )
     
-    name: str = Field(default="EthosChain", description="Application name")
+    name: str = Field(default="Sentinel", description="Application name")
     version: str = Field(default="0.1.0", description="Application version")
     environment: str = Field(default="development", description="Environment (dev/staging/prod)")
     debug: bool = Field(default=False, description="Enable debug mode")
