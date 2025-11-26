@@ -1,0 +1,25 @@
+{
+  "suppliers": [
+    {
+      "id": "SUP-001",
+      "name": "Acme Corporation",
+      "country": "United States",
+      "category": "Manufacturing",
+      "status": "active"
+    },
+    {
+      "id": "SUP-002",
+      "name": "GlobalTech Industries",
+      "country": "China",
+      "category": "Electronics",
+      "status": "active"
+    },
+    {
+      "id": "SUP-003",
+      "name": "EcoTextiles Ltd",
+      "country": "Bangladesh",
+      "category": "Textiles",
+      "status": "under_review"
+    }
+  ]
+}
