@@ -1,7 +1,7 @@
-# Ethos - AI Ethics Auditor for Supply Chain
+# Sentinel - AI Ethics Auditor for Supply Chain
 ## Infrastructure Templates
 
-This directory contains AWS infrastructure definitions for deploying the Ethos system.
+This directory contains AWS infrastructure definitions for deploying the Sentinel system.
 
 ## Structure
 

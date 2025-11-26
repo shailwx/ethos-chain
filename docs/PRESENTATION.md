@@ -1,4 +1,4 @@
-# 🌍 Ethos
+# 🌍 Sentinel
 ## AI Ethics Auditor for Supply Chain
 
 *Oslo GenAI Hackathon 2025*
@@ -19,10 +19,10 @@
 
 ---
 
-## 💡 Slide 2: The Solution - Ethos
+## 💡 Slide 2: The Solution - Sentinel
 **"An AI Auditor that never sleeps."**
 
-Ethos is an autonomous **Multi-Agent System** that revolutionizes ethical due diligence.
+Sentinel is an autonomous **Multi-Agent System** that revolutionizes ethical due diligence.
 1.  **Continuous Surveillance**: Scans global sources for supplier activities 24/7.
 2.  **Contextual Intelligence**: Doesn't just match keywords—it *reasons* about severity using AWS Bedrock.
 3.  **Policy Alignment**: Memorizes your specific "Code of Conduct" to judge violations against *your* standards.
@@ -103,7 +103,7 @@ Ethos is an autonomous **Multi-Agent System** that revolutionizes ethical due di
 
 ---
 
-## 🏆 Why Ethos is valuable
+## 🏆 Why Sentinel is valuable
 
 | Criteria | Our Strength |
 |----------|--------------|

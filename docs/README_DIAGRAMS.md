@@ -1,7 +1,7 @@
-# 📊 Ethos - AI Ethics Auditor for Supply Chain
+# 📊 Sentinel - AI Ethics Auditor for Supply Chain
 ## Diagrams Documentation
 
-This directory contains comprehensive visual documentation of the Ethos system architecture and processes.
+This directory contains comprehensive visual documentation of the Sentinel system architecture and processes.
 
 ## 📁 Available Diagrams
 
