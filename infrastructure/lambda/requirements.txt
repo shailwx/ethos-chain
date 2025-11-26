@@ -1,0 +1,8 @@
+# Lambda requirements
+# This file is used when packaging Lambda functions for deployment
+
+# HTTP requests
+requests>=2.31.0
+
+# AWS SDK (usually available in Lambda runtime, but include for local testing)
+boto3>=1.34.0

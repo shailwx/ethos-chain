@@ -1,0 +1,41 @@
+{
+  "demo_suppliers": [
+    {
+      "name": "GreenTech Manufacturing",
+      "description": "A clean supplier with strong ethics compliance",
+      "expected_risk": "GREEN",
+      "key_points": [
+        "ISO 14001 certified",
+        "No violations in past 5 years",
+        "Strong labor practices"
+      ]
+    },
+    {
+      "name": "Global Textiles Inc",
+      "description": "Supplier with some labor concerns",
+      "expected_risk": "YELLOW",
+      "key_points": [
+        "Recent worker complaints about overtime",
+        "Addressing issues with action plan",
+        "No proven violations"
+      ]
+    },
+    {
+      "name": "QuickProd Factories",
+      "description": "Supplier with serious environmental violations",
+      "expected_risk": "RED",
+      "key_points": [
+        "Fined $3M for water pollution in 2024",
+        "EPA violations",
+        "Ongoing investigation"
+      ]
+    }
+  ],
+  "sample_queries": [
+    "Audit supplier: Nike",
+    "Check compliance for Apple suppliers",
+    "Investigate Tesla factories",
+    "Audit Foxconn",
+    "Review Amazon warehouse conditions"
+  ]
+}

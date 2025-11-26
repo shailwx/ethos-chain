@@ -1,0 +1,35 @@
+{
+  "agentName": "sentinel-investigator",
+  "description": "Investigator Agent - Gathers external intelligence on suppliers from news, NGO reports, and public data sources",
+  "foundationModel": "anthropic.claude-3-5-sonnet-20241022-v2:0",
+  "instruction": "You are the Investigator Agent for Sentinel, an AI ethics auditor for supply chains.\n\nYour role is to gather external intelligence about suppliers. When given a supplier name, you must:\n\n1. Search for news articles, NGO reports, and public data about the supplier\n2. Focus on these categories:\n   - Labor violations (child labor, unsafe conditions, union busting, wage theft)\n   - Environmental issues (pollution, fines, permit violations, emissions)\n   - Governance problems (corruption, bribery, fraud, lack of transparency)\n\n3. For each finding, extract:\n   - Date of the incident\n   - Source name and URL\n   - Category (Labor, Environment, or Governance)\n   - A concise snippet describing what happened\n\n4. Distinguish between:\n   - ALLEGATIONS: Unproven claims, ongoing investigations, worker reports\n   - PROVEN VIOLATIONS: Official fines, court rulings, government reports\n\nBe thorough but concise. Focus on recent findings (last 2 years) and credible sources. Return findings in structured JSON format.",
+  "idleSessionTTLInSeconds": 600,
+  "actionGroups": [
+    {
+      "actionGroupName": "NewsSearchActions",
+      "description": "Actions for searching news and public data sources",
+      "actionGroupExecutor": {
+        "lambda": "arn:aws:lambda:REGION:ACCOUNT_ID:function:sentinel-news-search-dev"
+      },
+      "apiSchema": {
+        "payload": "{\"openapi\":\"3.0.0\",\"info\":{\"title\":\"News Search API\",\"version\":\"1.0.0\",\"description\":\"API for searching news and reports about suppliers\"},\"paths\":{\"/search-news\":{\"post\":{\"summary\":\"Search for news about a supplier\",\"description\":\"Searches news sources and public databases for information about a supplier\",\"operationId\":\"searchSupplierNews\",\"requestBody\":{\"required\":true,\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\",\"properties\":{\"supplier_name\":{\"type\":\"string\",\"description\":\"Name of the supplier to search for\"},\"categories\":{\"type\":\"array\",\"items\":{\"type\":\"string\",\"enum\":[\"labor\",\"environment\",\"governance\"]},\"description\":\"Categories to focus the search on\"},\"date_range\":{\"type\":\"string\",\"description\":\"Date range for search (e.g., '2y' for last 2 years)\"}},\"required\":[\"supplier_name\"]}}}},\"responses\":{\"200\":{\"description\":\"Successful search\",\"content\":{\"application/json\":{\"schema\":{\"type\":\"object\",\"properties\":{\"findings\":{\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"date\":{\"type\":\"string\"},\"source\":{\"type\":\"string\"},\"url\":{\"type\":\"string\"},\"category\":{\"type\":\"string\"},\"snippet\":{\"type\":\"string\"}}}}}}}}}}}}}}"
+      }
+    }
+  ],
+  "promptOverrideConfiguration": {
+    "promptConfigurations": [
+      {
+        "promptType": "PRE_PROCESSING",
+        "promptCreationMode": "OVERRIDDEN",
+        "promptState": "ENABLED",
+        "basePromptTemplate": "You are a research agent focused on gathering factual information about suppliers. Search thoroughly but efficiently. Prioritize credible sources like major news outlets, government agencies, NGOs, and official reports. Always cite your sources with dates and URLs.",
+        "inferenceConfiguration": {
+          "temperature": 0.3,
+          "topP": 0.9,
+          "topK": 250,
+          "maximumLength": 2048
+        }
+      }
+    ]
+  }
+}

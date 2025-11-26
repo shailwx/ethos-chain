@@ -1,0 +1,84 @@
+{
+  "audit_report": {
+    "supplier": "QuickProd Factories",
+    "timestamp": "2025-11-26T15:30:00Z",
+    "overall_risk": "RED",
+    "risk_scores": {
+      "Labor": 30,
+      "Environment": 100,
+      "Governance": 40
+    },
+    "findings": [
+      {
+        "date": "2024-06-15",
+        "source": "Environmental Protection Agency",
+        "snippet": "QuickProd Factories fined $3 million for repeated water pollution violations affecting local river ecosystem.",
+        "category": "Environment",
+        "url": "https://example.com/news/epa-fine-quickprod"
+      },
+      {
+        "date": "2024-04-20",
+        "source": "Labor Rights International",
+        "snippet": "Workers report excessive overtime without proper compensation at QuickProd facility.",
+        "category": "Labor",
+        "url": "https://example.com/news/quickprod-overtime"
+      },
+      {
+        "date": "2024-03-10",
+        "source": "State Department of Environmental Quality",
+        "snippet": "QuickProd failed to maintain required wastewater treatment systems for six months.",
+        "category": "Environment",
+        "url": "https://example.com/news/wastewater-violation"
+      },
+      {
+        "date": "2024-02-05",
+        "source": "Industry Ethics Review",
+        "snippet": "QuickProd management failed to disclose environmental incidents in quarterly reports.",
+        "category": "Governance",
+        "url": "https://example.com/news/disclosure-failure"
+      }
+    ],
+    "violations": [
+      {
+        "finding": {
+          "date": "2024-06-15",
+          "source": "Environmental Protection Agency",
+          "snippet": "QuickProd Factories fined $3 million for repeated water pollution violations affecting local river ecosystem.",
+          "category": "Environment"
+        },
+        "severity": "CRITICAL",
+        "policy_reference": "Section 3.2: Environmental Standards - Pollution Control",
+        "evidence_type": "PROVEN"
+      },
+      {
+        "finding": {
+          "date": "2024-04-20",
+          "source": "Labor Rights International",
+          "snippet": "Workers report excessive overtime without proper compensation at QuickProd facility.",
+          "category": "Labor"
+        },
+        "severity": "MINOR",
+        "policy_reference": "Section 2.1: Labor Standards - Working Conditions",
+        "evidence_type": "ALLEGATION"
+      },
+      {
+        "finding": {
+          "date": "2024-02-05",
+          "source": "Industry Ethics Review",
+          "snippet": "QuickProd management failed to disclose environmental incidents in quarterly reports.",
+          "category": "Governance"
+        },
+        "severity": "MAJOR",
+        "policy_reference": "Section 4.2: Governance & Ethics - Transparency",
+        "evidence_type": "PROVEN"
+      }
+    ],
+    "recommendations": [
+      "URGENT: Conduct immediate audit of supplier operations",
+      "Request supplier remediation plan with timeline",
+      "Schedule follow-up review in 30 days",
+      "Consider suspending orders until violations are addressed",
+      "Require third-party environmental audit before resuming business"
+    ]
+  }
+}
