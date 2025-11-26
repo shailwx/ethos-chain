@@ -132,8 +132,8 @@ This is a hackathon project. Contributions are welcome! Please:
 
 ## 👥 Team
 
-- **Atif** - Lead Architect / Product Owner
-- **Naresh** - Tech Lead
+- **Atif Usman** - Lead Architect / Product Owner
+- **Naresh Gaddam Reddy** - Tech Lead
 - **Shailendra Singh Chauhan** - Chief Engineer
 
 **Event**: Oslo GenAI Hackathon 2025  
