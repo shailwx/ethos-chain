@@ -1,6 +1,8 @@
 # 🌍 EthosChain: The AI Supply Chain Ethics Watchdog
 *Oslo GenAI Hackathon 2025*
 
+**Tracks**: 🚀 Business Innovation | 🌍 Social Impact
+
 ---
 
 ## 🚨 Slide 1: The Problem
@@ -46,24 +48,65 @@ EthosChain is an autonomous **Multi-Agent System** that revolutionizes ethical d
 ---
 
 ## 💰 Slide 5: Impact & Business Value
-*   **🚀 Operational Efficiency**: Reduces audit research time from **days to seconds**.
-*   **🛡️ Risk Mitigation**: Proactively identifies threats before they become headlines or lawsuits.
-*   **🌍 Social Responsibility**: Actively fights forced labor and environmental damage by removing the veil of obscurity from supply chains.
+
+### 🚀 Business Innovation
+*   **Workflow Transformation**: Automates manual compliance checks with intelligent AI agents.
+*   **Operational Efficiency**: Reduces audit research time from **days to seconds**.
+*   **Risk Mitigation**: Proactively identifies threats before they become headlines or lawsuits.
+*   **Cost Avoidance**: Prevents millions in fines (EU Supply Chain Act penalties start at €250K).
+
+### 🌍 Social Impact
+*   **Human Rights Protection**: Actively fights forced labor and modern slavery in supply chains.
+*   **Environmental Advocacy**: Detects and flags environmental violations before irreversible damage.
+*   **Transparency at Scale**: Removes the veil of obscurity from global supply networks.
 
 ---
 
-## 🔮 Slide 6: Future Roadmap
+## 🔄 Slide 6: Reusability & Scalability
+**Built for Universal Adoption**
+
+*   **Industry Agnostic**: Works for any sector with supply chains (Fashion, Electronics, Food, Automotive).
+*   **Modular Architecture**: Plug-and-play agents can be repurposed for other compliance domains (GDPR, Financial Audits).
+*   **Multi-Language Support**: AWS Bedrock handles global news sources in any language.
+*   **Open Integration**: REST APIs allow seamless connection to existing ERP/Supply Chain Management systems.
+
+---
+
+## 🔮 Slide 7: Technical Innovation & Future Roadmap
+
+### 🎯 What Makes This Novel?
+*   **Agentic AI at Scale**: True multi-agent collaboration (not just chained prompts).
+*   **Context-Aware Reasoning**: RAG-powered policy interpretation, not rigid rule matching.
+*   **Hybrid Intelligence**: Combines structured data (supplier databases) with unstructured intelligence (news, reports).
+
+### 📍 Roadmap
 *   **Phase 1 (Current)**: MVP with Multi-Agent Orchestration & Policy RAG.
 *   **Phase 2**: Real-time Global Web Search integration (Serper API).
 *   **Phase 3**: Blockchain verification for immutable audit logs.
 
 ---
 
-## 👥 Slide 7: The Team
+## 👥 Slide 8: The Team
 *   **Atif Usman** - Product Owner
 *   **Naresh Gaddam Reddy** - Tech Lead
 *   **Shailendra Singh Chauhan** - Chief Engineer
 
-*Built on AWS Bedrock | Leveraging Kiro for Spec-Driven Development*
+### 🛠️ Tech Stack
+*   **AWS Bedrock** - Multi-agent orchestration & LLM reasoning
+*   **AWS Knowledge Bases** - RAG for policy interpretation
+*   **Kiro** - Spec-driven development for rapid prototyping
+*   **Python** - Agent framework implementation
 
-**[Link to GitHub Repo]**
+**[GitHub Repo: github.com/shailwx/ethos-chain]**
+
+---
+
+## 🏆 Why EthosChain Wins
+
+| Criteria | Our Strength |
+|----------|--------------|
+| **Innovation** | Novel multi-agent system pushing boundaries in Agentic AI compliance |
+| **Impact** | Dual track: Business efficiency + Social good (human rights & environment) |
+| **Feasibility** | Built on AWS Bedrock with working MVP, technically sound |
+| **Presentation** | Clear problem → solution → demo narrative |
+| **Reusability** | Industry-agnostic, modular, open integration |
