@@ -47,7 +47,7 @@ User Query → Supervisor Agent
 - **Knowledge Base**: AWS Bedrock Knowledge Base (RAG for policy documents)
 - **Frontend**: Streamlit (Python)
 - **Infrastructure**: AWS Lambda (Action Groups for custom tools)
-- **Development Approach**: **Spec-Driven Development** (see `SPEC_Version2.md`)
+- **Development Approach**: **Spec-Driven Development** (see `specs/SPECIFICATION.md`)
 
 ## 📋 Documentation
 
@@ -102,7 +102,7 @@ This project follows **spec-driven development**. All implementation is based on
 
 5. **Run the Dashboard**
    ```bash
-   streamlit run app.py
+   streamlit run src/dashboard/app.py
    ```
 
 ## 🚧 Project Status
@@ -122,7 +122,7 @@ This project follows **spec-driven development**. All implementation is based on
 ## 🤝 Contributing
 
 This is a hackathon project. Contributions are welcome! Please:
-1. Read the specifications (`SPEC_Version2.md`)
+1. Read the specifications (`specs/SPECIFICATION.md`)
 2. Ensure changes align with the PRD
 3. Submit PRs with clear references to spec sections
 
