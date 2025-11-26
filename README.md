@@ -1,11 +1,12 @@
-# 🌍 EthosChain: AI Supply Chain Ethics Watchdog
+# 🌍 Ethos
+## AI Ethics Auditor for Supply Chain
 
 > **Oslo GenAI Hackathon 2025**  
 > *Business Innovation & Social Impact Track*
 
 ## 🎯 Overview
 
-EthosChain is an intelligent multi-agent system that automates ethical compliance monitoring of suppliers in global supply chains. Built with AWS Bedrock Agents, it helps procurement teams identify labor rights violations, environmental risks, and governance issues in real-time—moving beyond manual research to AI-powered, evidence-based auditing.
+Ethos is an intelligent multi-agent system that automates ethical compliance monitoring of suppliers in global supply chains. Built with AWS Bedrock Agents, it helps procurement teams identify labor rights violations, environmental risks, and governance issues in real-time—moving beyond manual research to AI-powered, evidence-based auditing.
 
 ### **The Problem**
 Procurement teams struggle to manually vet thousands of suppliers for ethical violations. This leads to:

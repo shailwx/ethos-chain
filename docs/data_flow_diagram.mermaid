@@ -1,0 +1,76 @@
+graph LR
+    subgraph Input["📥 Input Layer"]
+        SupplierName[Supplier Name]
+        PolicyDoc[Policy Document<br/>Code of Conduct]
+    end
+    
+    subgraph Processing["⚙️ Processing Layer"]
+        subgraph Investigation["🔍 Investigation Phase"]
+            Search[News Search]
+            Extract[Data Extraction]
+            Structure[Structuring]
+        end
+        
+        subgraph Analysis["🧮 Analysis Phase"]
+            RAG[RAG Query]
+            PolicyMatch[Policy Matching]
+            Scoring[Risk Scoring]
+        end
+        
+        subgraph Synthesis["🔄 Synthesis Phase"]
+            Aggregate[Aggregate Findings]
+            Calculate[Calculate Risk]
+            Format[Format Output]
+        end
+    end
+    
+    subgraph Output["📤 Output Layer"]
+        Report[Audit Report JSON]
+        Visual[Visual Dashboard]
+        Evidence[Evidence List]
+    end
+    
+    subgraph DataStores["💾 Data Stores"]
+        KB[(Knowledge Base<br/>S3)]
+        Cache[(Results Cache)]
+        Logs[(Audit Logs)]
+    end
+    
+    %% Input Flow
+    SupplierName -->|Query| Search
+    PolicyDoc -->|Upload| KB
+    
+    %% Investigation Phase
+    Search -->|Raw Data| Extract
+    Extract -->|Parsed Facts| Structure
+    Structure -->|Findings Array| RAG
+    
+    %% Analysis Phase
+    Structure -->|Facts| RAG
+    KB -->|Policy Context| RAG
+    RAG -->|Matches| PolicyMatch
+    PolicyMatch -->|Violations| Scoring
+    
+    %% Synthesis Phase
+    Scoring -->|Risk Data| Aggregate
+    Structure -->|Evidence| Aggregate
+    Aggregate -->|Combined Data| Calculate
+    Calculate -->|Risk Score| Format
+    
+    %% Output Flow
+    Format -->|JSON| Report
+    Report -->|Render| Visual
+    Report -->|Parse| Evidence
+    
+    %% Storage Flow
+    Report -.->|Store| Cache
+    Format -.->|Log| Logs
+    
+    %% Feedback Loop
+    Visual -.->|User Feedback| Logs
+    
+    style Investigation fill:#fff4e1
+    style Analysis fill:#ffe1e1
+    style Synthesis fill:#e1f5ff
+    style KB fill:#e1ffe1
+    style Visual fill:#f0e1ff

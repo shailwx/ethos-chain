@@ -1,11 +1,11 @@
 # Product Requirement Document (PRD)
-**Project Name:** EthosChain  
+**Project Name:** Ethos - AI Ethics Auditor for Supply Chain  
 **Version:** 1.0  
 **Date:** 2025-11-26  
 **Author:** Shailendra Singh Chauhan
 
 ## 1. Executive Summary
-EthosChain is an AI-powered supply chain auditor designed to automate the vetting of suppliers against corporate ethical standards. By leveraging AWS Bedrock Agents, it moves beyond simple keyword matching to reason about complex violations in labor rights and environmental sustainability.
+Ethos is an AI-powered supply chain auditor designed to automate the vetting of suppliers against corporate ethical standards. By leveraging AWS Bedrock Agents, it moves beyond simple keyword matching to reason about complex violations in labor rights and environmental sustainability.
 
 ## 2. Problem Statement
 Procurement teams struggle to monitor thousands of suppliers. Manual vetting is slow, error-prone, and often misses critical news buried in local reports, leading to reputational risk and non-compliance with laws like the EU Supply Chain Act.

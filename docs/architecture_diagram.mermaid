@@ -1,0 +1,92 @@
+graph TB
+    subgraph User["👤 User Layer"]
+        PO[Procurement Officer]
+        Dashboard[📊 Streamlit Dashboard]
+    end
+    
+    subgraph Frontend["🖥️ Frontend Layer"]
+        UI_Input[Supplier Input Form]
+        UI_Dashboard[Risk Dashboard]
+        UI_Evidence[Evidence Viewer]
+        UI_Policy[Policy Manager]
+    end
+    
+    subgraph AWS["☁️ AWS Bedrock Layer"]
+        subgraph Agents["🤖 Multi-Agent System"]
+            Supervisor["🧠 Supervisor Agent<br/>(Orchestrator)"]
+            Investigator["🕵️ Investigator Agent<br/>(Intelligence)"]
+            Auditor["⚖️ Auditor Agent<br/>(Compliance)"]
+        end
+        
+        subgraph Knowledge["📚 Knowledge Base"]
+            KB[AWS Bedrock KB<br/>Code of Conduct<br/>Policy Documents]
+            RAG[RAG Engine]
+        end
+        
+        subgraph Actions["⚡ Action Groups"]
+            Lambda1[Lambda: News Search]
+            Lambda2[Lambda: Policy Query]
+            Lambda3[Lambda: Risk Scoring]
+        end
+    end
+    
+    subgraph External["🌐 External Data Sources"]
+        News[News APIs<br/>Reuters, Bloomberg]
+        NGO[NGO Reports<br/>UN, ILO]
+        Public[Public Data<br/>Government Records]
+    end
+    
+    subgraph Storage["💾 Data Layer"]
+        S3[S3 Bucket<br/>Policy Documents]
+        Results[Audit Results<br/>JSON Storage]
+    end
+    
+    %% User Flow
+    PO --> Dashboard
+    Dashboard --> UI_Input
+    Dashboard --> UI_Dashboard
+    Dashboard --> UI_Evidence
+    Dashboard --> UI_Policy
+    
+    %% Request Flow
+    UI_Input -->|"1. Audit Request"| Supervisor
+    
+    %% Agent Orchestration
+    Supervisor -->|"2. Gather Intelligence"| Investigator
+    Supervisor -->|"4. Evaluate Compliance"| Auditor
+    Supervisor -->|"6. Generate Report"| UI_Dashboard
+    
+    %% Investigator Flow
+    Investigator -->|"3. Search"| Lambda1
+    Lambda1 --> News
+    Lambda1 --> NGO
+    Lambda1 --> Public
+    News -->|"Facts + Sources"| Investigator
+    NGO -->|"Facts + Sources"| Investigator
+    Public -->|"Facts + Sources"| Investigator
+    Investigator -->|"Findings JSON"| Supervisor
+    
+    %% Auditor Flow
+    Auditor -->|"5. Query Policy"| Lambda2
+    Lambda2 --> RAG
+    RAG --> KB
+    KB --> S3
+    KB -->|"Policy Match"| Auditor
+    Auditor -->|"Risk Score"| Lambda3
+    Lambda3 -->|"Assessment JSON"| Auditor
+    Auditor -->|"Compliance Report"| Supervisor
+    
+    %% Results Flow
+    Supervisor -->|"Store Results"| Results
+    Results --> UI_Dashboard
+    Results --> UI_Evidence
+    
+    %% Policy Update Flow
+    UI_Policy -.->|"Upload New Policy"| S3
+    S3 -.->|"Sync"| KB
+    
+    style Supervisor fill:#e1f5ff
+    style Investigator fill:#fff4e1
+    style Auditor fill:#ffe1e1
+    style KB fill:#e1ffe1
+    style Dashboard fill:#f0e1ff

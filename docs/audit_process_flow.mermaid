@@ -1,0 +1,61 @@
+sequenceDiagram
+    actor User as 👤 Procurement Officer
+    participant UI as 📊 Streamlit UI
+    participant Supervisor as 🧠 Supervisor Agent
+    participant Investigator as 🕵️ Investigator Agent
+    participant Lambda as ⚡ Lambda: News Search
+    participant External as 🌐 External Sources
+    participant Auditor as ⚖️ Auditor Agent
+    participant KB as 📚 Knowledge Base
+    participant Storage as 💾 Results Storage
+    
+    User->>UI: Enter Supplier Name
+    UI->>Supervisor: Initiate Audit Request
+    activate Supervisor
+    
+    Note over Supervisor: Step 1: Intelligence Gathering
+    Supervisor->>Investigator: Gather Intelligence(supplier)
+    activate Investigator
+    
+    Investigator->>Lambda: Search News & Reports
+    activate Lambda
+    Lambda->>External: Query APIs<br/>(News, NGO, Public Data)
+    External-->>Lambda: Raw Data
+    Lambda-->>Investigator: Structured Findings
+    deactivate Lambda
+    
+    Note over Investigator: Parse & Structure Results
+    Investigator-->>Supervisor: Findings JSON<br/>[date, source, snippet]
+    deactivate Investigator
+    
+    Note over Supervisor: Step 2: Policy Evaluation
+    Supervisor->>Auditor: Evaluate Compliance(findings)
+    activate Auditor
+    
+    loop For Each Finding
+        Auditor->>KB: Query: "Does this violate policy?"
+        KB-->>Auditor: Policy Match + Context
+        Note over Auditor: Assess Severity<br/>(Minor/Major/Critical)
+    end
+    
+    Auditor-->>Supervisor: Compliance Report<br/>[violations, risk_score]
+    deactivate Auditor
+    
+    Note over Supervisor: Step 3: Generate Final Report
+    Supervisor->>Supervisor: Aggregate Results<br/>Calculate Overall Risk<br/>Format JSON
+    
+    Supervisor->>Storage: Store Audit Results
+    Supervisor->>UI: Return Assessment<br/>(JSON Report)
+    deactivate Supervisor
+    
+    UI->>UI: Render Dashboard<br/>🚦 Traffic Light<br/>📊 Risk Breakdown<br/>📄 Evidence List
+    
+    UI-->>User: Display Results
+    
+    Note over User,UI: User Actions
+    User->>UI: Drill Down Evidence
+    UI-->>User: Show Source Details
+    
+    User->>UI: Update Policy
+    UI->>KB: Upload New Document
+    KB-->>UI: Policy Updated

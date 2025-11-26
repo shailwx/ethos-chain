@@ -1,6 +1,7 @@
-# Infrastructure Templates for EthosChain
+# Ethos - AI Ethics Auditor for Supply Chain
+## Infrastructure Templates
 
-This directory contains AWS infrastructure definitions for deploying the EthosChain system.
+This directory contains AWS infrastructure definitions for deploying the Ethos system.
 
 ## Structure
 

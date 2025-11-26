@@ -1,0 +1,96 @@
+graph TB
+    subgraph Internet["🌐 Internet"]
+        User[👤 End Users]
+    end
+    
+    subgraph AWS["☁️ AWS Cloud Environment"]
+        subgraph Compute["💻 Compute Services"]
+            EC2[EC2 Instance<br/>Streamlit App<br/>t3.medium]
+            Lambda1[Lambda Function<br/>news_search.py<br/>Python 3.11]
+            Lambda2[Lambda Function<br/>policy_query.py<br/>Python 3.11]
+            Lambda3[Lambda Function<br/>risk_scoring.py<br/>Python 3.11]
+        end
+        
+        subgraph AI["🤖 AI/ML Services"]
+            Bedrock[AWS Bedrock<br/>Multi-Agent System]
+            KB[Bedrock Knowledge Base<br/>Vector Store]
+            Model[Foundation Model<br/>Claude 3.5 Sonnet]
+        end
+        
+        subgraph Storage["💾 Storage Services"]
+            S3_Policy[S3 Bucket<br/>policy-documents<br/>Private]
+            S3_Results[S3 Bucket<br/>audit-results<br/>Private]
+            S3_Logs[S3 Bucket<br/>audit-logs<br/>Private]
+        end
+        
+        subgraph Network["🔒 Networking & Security"]
+            VPC[VPC<br/>10.0.0.0/16]
+            SG1[Security Group<br/>Web Access]
+            SG2[Security Group<br/>Lambda Access]
+            IAM[IAM Roles<br/>& Policies]
+            ALB[Application Load<br/>Balancer]
+        end
+        
+        subgraph Monitoring["📊 Monitoring & Logging"]
+            CW[CloudWatch<br/>Logs & Metrics]
+            XRay[X-Ray<br/>Tracing]
+        end
+    end
+    
+    subgraph External["🔌 External Services"]
+        NewsAPI[News APIs<br/>Reuters, etc.]
+        NGOAPI[NGO APIs<br/>UN, ILO]
+    end
+    
+    %% User Connection
+    User -->|HTTPS| ALB
+    ALB -->|Port 8501| EC2
+    
+    %% Application Flow
+    EC2 -->|Bedrock API| Bedrock
+    Bedrock -->|Invoke| Lambda1
+    Bedrock -->|Invoke| Lambda2
+    Bedrock -->|Invoke| Lambda3
+    
+    %% Lambda External Calls
+    Lambda1 -->|HTTPS| NewsAPI
+    Lambda1 -->|HTTPS| NGOAPI
+    
+    %% AI Services
+    Bedrock -->|Query| Model
+    Bedrock -->|RAG| KB
+    KB -->|Read| S3_Policy
+    
+    %% Storage Operations
+    EC2 -->|Store Results| S3_Results
+    Lambda1 -.->|Log| S3_Logs
+    Lambda2 -.->|Log| S3_Logs
+    Lambda3 -.->|Log| S3_Logs
+    
+    %% Security
+    VPC -.->|Contains| EC2
+    VPC -.->|Contains| Lambda1
+    VPC -.->|Contains| Lambda2
+    VPC -.->|Contains| Lambda3
+    SG1 -.->|Protects| EC2
+    SG2 -.->|Protects| Lambda1
+    SG2 -.->|Protects| Lambda2
+    SG2 -.->|Protects| Lambda3
+    IAM -.->|Authorizes| EC2
+    IAM -.->|Authorizes| Lambda1
+    IAM -.->|Authorizes| Bedrock
+    
+    %% Monitoring
+    EC2 -.->|Metrics| CW
+    Lambda1 -.->|Logs| CW
+    Lambda2 -.->|Logs| CW
+    Lambda3 -.->|Logs| CW
+    Bedrock -.->|Traces| XRay
+    
+    style Bedrock fill:#e1f5ff
+    style KB fill:#e1ffe1
+    style EC2 fill:#fff4e1
+    style Lambda1 fill:#ffe1e1
+    style Lambda2 fill:#ffe1e1
+    style Lambda3 fill:#ffe1e1
+    style VPC fill:#f0e1ff

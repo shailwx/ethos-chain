@@ -1,7 +1,8 @@
-# 🏗️ EthosChain System Specification
+# 🏗️ Ethos - AI Ethics Auditor for Supply Chain
+## System Specification
 
 ## 1. System Architecture: "The Supervisor Pattern"
-EthosChain uses a hierarchical multi-agent system to ensure accuracy and separation of concerns.
+Ethos uses a hierarchical multi-agent system to ensure accuracy and separation of concerns.
 
 - **The Supervisor (Orchestrator)**: Manages the user interaction and delegates work.
 - **The Investigator (Worker A)**: Focused purely on information retrieval (Web/News).
