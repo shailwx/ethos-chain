@@ -1,0 +1,25 @@
+graph TB
+    PO["👤 Procurement Officer"]
+    Supplier["🏭 Supplier (Passive)"]
+    
+    subgraph EthosChain["EthosChain System"]
+        UC1["📝 Request Supplier Audit"]
+        UC2["📊 View Risk Dashboard"]
+        UC3["🔍 Drill-down into Evidence"]
+        UC4["📋 Update Code of Conduct"]
+    end
+    
+    subgraph Bedrock["AWS Bedrock Agents"]
+        UC_Search["🔎 Search External News"]
+        UC_RAG["⚖️ Compare vs Policy (RAG)"]
+    end
+    
+    PO --> UC1
+    PO --> UC2
+    PO --> UC3
+    PO --> UC4
+    
+    UC1 -.->|includes| UC_Search
+    UC1 -.->|includes| UC_RAG
+    
+    UC_Search -.->|scans public data| Supplier

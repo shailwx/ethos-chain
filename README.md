@@ -52,9 +52,9 @@ User Query → Supervisor Agent
 
 This project follows **spec-driven development**. All implementation is based on formal specifications:
 
-- **[PRD_Version2.md](./PRD_Version2.md)** - Product Requirements (functional/non-functional requirements, KPIs)
-- **[SPEC_Version2.md](./SPEC_Version2.md)** - System Specification (architecture, agent definitions, API contracts)
-- **[use_case_diagram_Version2.mermaid](./use_case_diagram_Version2.mermaid)** - Use Case Diagram
+- **[PRD.md](./specs/PRD.md)** - Product Requirements (functional/non-functional requirements, KPIs)
+- **[SPECIFICATION.md](./specs/SPECIFICATION.md)** - System Specification (architecture, agent definitions, API contracts)
+- **[use_case_diagram.mermaid](./specs/use_case_diagram.mermaid)** - Use Case Diagram
 
 > ⚠️ **Development Rule**: All code changes must reference and comply with the specifications above.
 
