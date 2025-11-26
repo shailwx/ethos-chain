@@ -84,19 +84,31 @@ class AuditorAgent:
         
         snippet = finding.get("snippet", "").lower()
         
-        # Mock policy rules
-        if "fined" in snippet or "violation" in snippet:
+        # Positive findings - no violation
+        if any(word in snippet for word in ['award', 'certification', 'certified', 'maintains', 'receives']):
+            return None
+        
+        # Critical violations
+        if any(phrase in snippet for phrase in ['critical', 'severe', '$3m', 'hazardous', 'lawsuit', 'abuses']):
+            severity = "CRITICAL"
+            policy_ref = "Section 2.1: Critical Violations - Zero Tolerance"
+        # Major violations
+        elif any(word in snippet for word in ['fined', 'violation', 'investigation', 'contamination']):
             severity = "MAJOR"
-        elif "unsafe" in snippet or "report" in snippet:
+            policy_ref = "Section 3.2: Environmental and Labor Standards"
+        # Minor concerns
+        elif any(word in snippet for word in ['concerns', 'questions', 'allegations', 'accused', 'report']):
             severity = "MINOR"
+            policy_ref = "Section 4.1: Monitoring and Improvement"
+        # No violation found
         else:
             return None
         
         return {
             "finding": finding,
             "severity": severity,  # "MINOR" | "MAJOR" | "CRITICAL"
-            "policy_reference": "Section 3.2: Environmental Standards",  # Mock
-            "evidence_type": "PROVEN" if "fined" in snippet else "ALLEGATION"
+            "policy_reference": policy_ref,
+            "evidence_type": "PROVEN" if any(word in snippet for word in ['fined', 'found', 'confirmed']) else "ALLEGATION"
         }
     
     def _get_severity_points(self, severity: str) -> int:

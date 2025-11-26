@@ -29,6 +29,76 @@
         "EPA violations",
         "Ongoing investigation"
       ]
+    },
+    {
+      "name": "Nordic Timber Co",
+      "description": "Sustainable forestry with excellent track record",
+      "expected_risk": "GREEN",
+      "key_points": [
+        "FSC certified forests",
+        "Carbon negative operations",
+        "Fair wages above industry standard"
+      ]
+    },
+    {
+      "name": "Pacific Seafood Processors",
+      "description": "Mixed record with labor and environmental concerns",
+      "expected_risk": "YELLOW",
+      "key_points": [
+        "Reports of migrant worker exploitation",
+        "Working with NGOs on reforms",
+        "Some overfishing allegations"
+      ]
+    },
+    {
+      "name": "Andean Mining Corp",
+      "description": "Multiple violations and indigenous rights concerns",
+      "expected_risk": "RED",
+      "key_points": [
+        "Illegal mining operations reported",
+        "Community displacement issues",
+        "Water contamination lawsuits pending"
+      ]
+    },
+    {
+      "name": "MedTech Solutions",
+      "description": "Highly regulated with strong compliance",
+      "expected_risk": "GREEN",
+      "key_points": [
+        "FDA and CE certified",
+        "Annual third-party audits",
+        "Transparent supply chain"
+      ]
+    },
+    {
+      "name": "FastFashion Garments",
+      "description": "Concerning labor practices and safety issues",
+      "expected_risk": "YELLOW",
+      "key_points": [
+        "Below minimum wage allegations",
+        "Factory safety improvements needed",
+        "Child labor monitoring required"
+      ]
+    },
+    {
+      "name": "SolarPanel Industries",
+      "description": "Clean energy leader with ethical operations",
+      "expected_risk": "GREEN",
+      "key_points": [
+        "B Corp certified",
+        "Zero waste manufacturing",
+        "Employee ownership program"
+      ]
+    },
+    {
+      "name": "AgriChem Industries",
+      "description": "Serious environmental and health violations",
+      "expected_risk": "RED",
+      "key_points": [
+        "Banned pesticide usage confirmed",
+        "Groundwater contamination incidents",
+        "Worker health issues documented"
+      ]
     }
   ],
   "sample_queries": [
@@ -36,6 +106,13 @@
     "Check compliance for Apple suppliers",
     "Investigate Tesla factories",
     "Audit Foxconn",
-    "Review Amazon warehouse conditions"
+    "Review Amazon warehouse conditions",
+    "Audit Nordic Timber Co",
+    "Check Pacific Seafood Processors ethics",
+    "Investigate Andean Mining Corp violations",
+    "Review MedTech Solutions compliance",
+    "Audit FastFashion Garments labor practices",
+    "Check SolarPanel Industries sustainability",
+    "Investigate AgriChem Industries safety record"
   ]
 }

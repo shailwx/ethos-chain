@@ -20,6 +20,69 @@
       "country": "Bangladesh",
       "category": "Textiles",
       "status": "under_review"
+    },
+    {
+      "id": "SUP-004",
+      "name": "Nordic Timber Co",
+      "country": "Sweden",
+      "category": "Forestry",
+      "status": "active"
+    },
+    {
+      "id": "SUP-005",
+      "name": "Pacific Seafood Processors",
+      "country": "Thailand",
+      "category": "Food Processing",
+      "status": "active"
+    },
+    {
+      "id": "SUP-006",
+      "name": "Andean Mining Corp",
+      "country": "Peru",
+      "category": "Mining",
+      "status": "under_review"
+    },
+    {
+      "id": "SUP-007",
+      "name": "MedTech Solutions",
+      "country": "Germany",
+      "category": "Medical Devices",
+      "status": "active"
+    },
+    {
+      "id": "SUP-008",
+      "name": "FastFashion Garments",
+      "country": "Vietnam",
+      "category": "Apparel",
+      "status": "flagged"
+    },
+    {
+      "id": "SUP-009",
+      "name": "SolarPanel Industries",
+      "country": "South Korea",
+      "category": "Renewable Energy",
+      "status": "active"
+    },
+    {
+      "id": "SUP-010",
+      "name": "Automotive Parts Plus",
+      "country": "Mexico",
+      "category": "Automotive",
+      "status": "active"
+    },
+    {
+      "id": "SUP-011",
+      "name": "AgriChem Industries",
+      "country": "Brazil",
+      "category": "Chemicals",
+      "status": "under_review"
+    },
+    {
+      "id": "SUP-012",
+      "name": "Digital Components Ltd",
+      "country": "Taiwan",
+      "category": "Semiconductors",
+      "status": "active"
     }
   ]
 }
