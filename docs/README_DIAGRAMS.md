@@ -5,8 +5,21 @@ This directory contains comprehensive visual documentation of the Sentinel syste
 
 ## 📁 Available Diagrams
 
-### 1. **Architecture Diagram** (`architecture_diagram.mermaid`)
-**Purpose**: High-level system architecture showing all components and their relationships.
+### 1a. **Simple Architecture Diagram** (`architecture_diagram_simple.mermaid`)
+**Purpose**: High-level overview of the core system architecture.
+
+**Shows**:
+- User interaction with Streamlit Dashboard
+- Three main agents (Supervisor, Investigator, Auditor)
+- External data sources and Knowledge Base
+- Simple workflow between components
+
+**Use Case**: Quick understanding of the system, presentation slides, executive overview.
+
+---
+
+### 1b. **Detailed Architecture Diagram** (`architecture_diagram.mermaid`)
+**Purpose**: Comprehensive system architecture showing all components and their relationships.
 
 **Shows**:
 - User interface layer (Streamlit Dashboard)

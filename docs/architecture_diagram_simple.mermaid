@@ -1,0 +1,33 @@
+graph TB
+    User[👤 Procurement Officer] --> UI[📊 Streamlit Dashboard]
+    
+    UI -->|Supplier Name| Supervisor[🧠 Supervisor Agent]
+    
+    Supervisor -->|Delegate| Investigator[🕵️ Investigator Agent]
+    Supervisor -->|Delegate| Auditor[⚖️ Auditor Agent]
+    
+    Investigator -->|Search| External[🌐 External Sources<br/>News, NGO, Public Data]
+    External -->|Findings| Investigator
+    
+    Auditor -->|Query| KB[📚 Knowledge Base<br/>Code of Conduct]
+    KB -->|Policy Context| Auditor
+    
+    Investigator -->|Intelligence| Supervisor
+    Auditor -->|Compliance Report| Supervisor
+    
+    Supervisor -->|Risk Assessment| UI
+    UI -->|Visual Report| User
+    
+    subgraph AWS["☁️ AWS Bedrock"]
+        Supervisor
+        Investigator
+        Auditor
+        KB
+    end
+    
+    style Supervisor fill:#e1f5ff
+    style Investigator fill:#fff4e1
+    style Auditor fill:#ffe1e1
+    style KB fill:#e1ffe1
+    style UI fill:#f0e1ff
+    style AWS fill:#f5f5f5,stroke:#333,stroke-width:2px
