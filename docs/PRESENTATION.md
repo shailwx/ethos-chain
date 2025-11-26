@@ -101,7 +101,7 @@ EthosChain is an autonomous **Multi-Agent System** that revolutionizes ethical d
 
 ---
 
-## 🏆 Why EthosChain Wins
+## 🏆 Why EthosChain is valuable
 
 | Criteria | Our Strength |
 |----------|--------------|
