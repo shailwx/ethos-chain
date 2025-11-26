@@ -20,7 +20,7 @@
 ---
 
 ## 💡 Slide 2: The Solution - Sentinel
-**"An AI Auditor that never sleeps."**
+**"An AI Auditor that always alert"**
 
 Sentinel is an autonomous **Multi-Agent System** that revolutionizes ethical due diligence.
 1.  **Continuous Surveillance**: Scans global sources for supplier activities 24/7.
