@@ -1,87 +1,86 @@
-stateDiagram-v2
-    [*] --> Idle
+graph TB
+    Start([User Initiates Audit]) --> Supervisor
     
-    Idle --> ReceiveRequest: User initiates audit
-    
-    state "🧠 Supervisor Agent" as Supervisor {
-        ReceiveRequest --> ParseRequest: Parse supplier name
-        ParseRequest --> DelegateInvestigation: Delegate to Investigator
+    subgraph Supervisor["🧠 Supervisor Agent - Orchestrator"]
+        S1[Receive Request]
+        S2[Parse Supplier Name]
+        S3[Delegate to Investigator]
+        S4[Wait for Intelligence]
+        S5[Process Findings]
+        S6[Delegate to Auditor]
+        S7[Wait for Compliance]
+        S8[Aggregate Results]
+        S9[Generate Report]
+        S10[Return to UI]
         
-        state "Waiting for Intelligence" as WaitIntel
-        DelegateInvestigation --> WaitIntel
+        S1 --> S2
+        S2 --> S3
+        S3 --> S4
+        S4 --> S5
+        S5 --> S6
+        S6 --> S7
+        S7 --> S8
+        S8 --> S9
+        S9 --> S10
+    end
+    
+    subgraph Investigator["🕵️ Investigator Agent - Intelligence Gathering"]
+        I1[Initiate Search]
+        I2[Query News Sources]
+        I3[Query NGO Reports]
+        I4[Query Public Records]
+        I5[Collect Results]
+        I6[Filter Relevant Data]
+        I7[Structure to JSON]
+        I8[Validate Findings]
+        I9[Return Findings]
         
-        WaitIntel --> ProcessFindings: Receives findings
-        ProcessFindings --> DelegateAudit: Delegate to Auditor
+        I1 --> I2
+        I1 --> I3
+        I1 --> I4
+        I2 --> I5
+        I3 --> I5
+        I4 --> I5
+        I5 --> I6
+        I6 --> I7
+        I7 --> I8
+        I8 --> I9
+    end
+    
+    subgraph Auditor["⚖️ Auditor Agent - Policy Compliance"]
+        A1[Receive Findings]
+        A2[Prepare RAG Queries]
+        A3[Query Knowledge Base]
+        A4[Interpret Policy]
+        A5[Assess Severity]
+        A6{More Findings?}
+        A7[Compile Violations]
+        A8[Calculate Risk Score]
+        A9[Generate Report]
+        A10[Return Compliance]
         
-        state "Waiting for Compliance" as WaitCompliance
-        DelegateAudit --> WaitCompliance
-        
-        WaitCompliance --> AggregateResults: Receives compliance report
-        AggregateResults --> GenerateReport: Format final JSON
-        GenerateReport --> ReturnToUser: Send to UI
-    }
+        A1 --> A2
+        A2 --> A3
+        A3 --> A4
+        A4 --> A5
+        A5 --> A6
+        A6 -->|Yes| A3
+        A6 -->|No| A7
+        A7 --> A8
+        A8 --> A9
+        A9 --> A10
+    end
     
-    state "🕵️ Investigator Agent" as Investigator {
-        state "Search Phase" as SearchPhase {
-            [*] --> InitiateSearch
-            InitiateSearch --> QueryNews: Search news sources
-            InitiateSearch --> QueryNGO: Search NGO reports
-            InitiateSearch --> QueryPublic: Search public records
-            
-            QueryNews --> CollectResults
-            QueryNGO --> CollectResults
-            QueryPublic --> CollectResults
-        }
-        
-        CollectResults --> FilterRelevant: Apply relevance filters
-        FilterRelevant --> StructureData: Convert to JSON schema
-        StructureData --> ValidateFindings: Validate data quality
-        ValidateFindings --> [*]: Return findings
-    }
+    S3 -.->|Task: Gather Intelligence| I1
+    I9 -.->|Findings JSON| S5
     
-    state "⚖️ Auditor Agent" as Auditor {
-        state "Evaluation Phase" as EvalPhase {
-            [*] --> ReceiveFindings
-            ReceiveFindings --> PrepareQueries: Prepare RAG queries
-            
-            state "Policy Check Loop" as PolicyLoop {
-                PrepareQueries --> QueryKnowledgeBase
-                QueryKnowledgeBase --> InterpretPolicy: Analyze policy context
-                InterpretPolicy --> AssessSeverity: Categorize violation
-                AssessSeverity --> NextFinding: More findings?
-                NextFinding --> QueryKnowledgeBase: Yes
-            }
-            
-            NextFinding --> CompileViolations: No
-        }
-        
-        CompileViolations --> CalculateRiskScore: Aggregate scores
-        CalculateRiskScore --> GenerateCompliance: Create report
-        GenerateCompliance --> [*]: Return compliance
-    }
+    S6 -.->|Task: Evaluate Compliance| A1
+    A10 -.->|Compliance Report| S8
     
-    DelegateInvestigation --> Investigator: Task: Gather Intelligence
-    Investigator --> ProcessFindings: Findings JSON
+    S10 --> End([Complete])
     
-    DelegateAudit --> Auditor: Task: Evaluate Compliance
-    Auditor --> AggregateResults: Compliance Report
-    
-    ReturnToUser --> [*]
-    
-    note right of Supervisor
-        Orchestrates workflow
-        Manages state
-        Formats outputs
-    end note
-    
-    note right of Investigator
-        Gathers external data
-        No policy knowledge
-        Returns facts only
-    end note
-    
-    note right of Auditor
-        Policy expert
-        RAG-powered
-        Risk scoring
-    end note
+    style Supervisor fill:#e1f5ff
+    style Investigator fill:#fff4e1
+    style Auditor fill:#ffe1e1
+    style Start fill:#90EE90
+    style End fill:#90EE90
