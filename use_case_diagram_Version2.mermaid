@@ -1,0 +1,25 @@
+usecaseDiagram
+    actor ProcurementOfficer as "Procurement Officer"
+    actor Supplier as "Supplier (Passive)"
+    
+    package "EthosChain System" {
+        usecase "Request Supplier Audit" as UC1
+        usecase "View Risk Dashboard" as UC2
+        usecase "Drill-down into Evidence" as UC3
+        usecase "Update Code of Conduct" as UC4
+    }
+
+    package "AWS Bedrock Agents" {
+        usecase "Search External News" as UC_Search
+        usecase "Compare vs Policy (RAG)" as UC_RAG
+    }
+
+    ProcurementOfficer --> UC1
+    ProcurementOfficer --> UC2
+    ProcurementOfficer --> UC3
+    ProcurementOfficer --> UC4
+    
+    UC1 ..> UC_Search : Includes
+    UC1 ..> UC_RAG : Includes
+    
+    UC_Search --> Supplier : "Scans Public Data"
